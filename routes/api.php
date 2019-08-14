@@ -13,7 +13,7 @@ $api->version('v1', ['middleware' => ['api']], function($api) {
         // Incomes
         $api->resource('customers', 'Incomes\Customers');
         $api->resource('invoices', 'Incomes\Invoices');
-        $api->resource('invoices.payments', 'Incomes\InvoicePayments');
+        $api->resource('invoicespayments', 'Incomes\InvoicePayments');
         $api->resource('revenues', 'Incomes\Revenues');
 
         // Expenses
@@ -40,3 +40,4 @@ $api->version('v1', ['middleware' => ['api']], function($api) {
         $api->resource('users', 'Auth\Users');
     });
 });
+ 

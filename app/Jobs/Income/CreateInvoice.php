@@ -50,7 +50,6 @@ class CreateInvoice
         $sub_total = 0;
         $discount_total = 0;
         $discount = $this->request['discount'];
-
         if ($this->request['item']) {
             foreach ($this->request['item'] as $item) {
                 $invoice_item = dispatch(new CreateInvoiceItem($item, $invoice, $discount));

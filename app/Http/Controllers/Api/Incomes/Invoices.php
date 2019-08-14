@@ -62,9 +62,7 @@ class Invoices extends ApiController
         if (empty($request['amount'])) {
             $request['amount'] = 0;
         }
-
         $invoice = dispatch(new CreateInvoice($request));
-
         return $this->response->created(url('api/invoices/' . $invoice->id));
     }
 

@@ -17,10 +17,8 @@ class Revenues extends ApiController
      *
      * @return \Dingo\Api\Http\Response
      */
-    public function index()
-    {
+    public function index(){
         $revenues = Revenue::with(['account', 'customer', 'category'])->collect();
-
         return $this->response->paginator($revenues, new Transformer());
     }
 
@@ -44,8 +42,7 @@ class Revenues extends ApiController
     public function store(Request $request)
     {
         $revenue = Revenue::create($request->all());
-
-        return $this->response->created(url('api/revenues/'.$revenue->id));
+        return $this->response->created(url('api/revenues/' . $revenue->id));
     }
 
     /**
